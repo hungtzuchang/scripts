@@ -82,3 +82,4 @@ from statsmodels.nonparametric.smoothers_lowess import lowess
 def smooth_lowess(data):
 	filtered = lowess(data, np.arange(0,data.shape[0]), is_sorted=True, frac=0.1, it=0)
 	data = filtered[:,1]
+	return data

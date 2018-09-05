@@ -77,3 +77,8 @@ def smooth_gaussian(x,step_size,sigma):
     xnew=np.r_[x[::-1],x,x[::-1]]
     #gfilter/=np.max(gfilter)
     return step_size*fftconvolve(xnew,gfilter,'same')[x.shape[0]:2*x.shape[0]]
+    
+from statsmodels.nonparametric.smoothers_lowess import lowess
+def smooth_lowess(data):
+	filtered = lowess(data, np.arange(0,data.shape[0]), is_sorted=True, frac=0.1, it=0)
+	data = filtered[:,1]

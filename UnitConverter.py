@@ -11,6 +11,8 @@ def common2au(x,identifier):
         return x/315775.13
     elif(identifier=='Debye'):
         return x/2.541746
+    elif(identifier=='Efield'):
+        return x/5.14220652e11
     else:
         return None
 
@@ -26,5 +28,7 @@ def au2common(x,identifier):
         return x*315775.13
     elif(identifier=='Debye'):
         return x*2.541746
+    elif(identifier=='Efield'):
+        return x*5.14220652e11
     else:
         return None

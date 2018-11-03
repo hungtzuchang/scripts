@@ -14,7 +14,7 @@ def FanoProfile(Evector,E0,Gamma,q):
 
 def FanoProfileNorm(Evector,E0,Gamma,q):
     Evectornew=(Evector-E0)*2/Gamma
-    return (np.square(Evectornew+q)/(1+np.square(Evectornew)))*Gamma/2/(q*q-1)/np.pi
+    return (np.square(Evectornew+q)/(1+np.square(Evectornew))-1)*Gamma/2/(q*q-1)/np.pi
 
 def Lorentzian(Evector,E0,Gamma):
 	return Gamma/2/(np.square(Evector-E0)+np.square(Gamma/2))

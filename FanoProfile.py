@@ -12,9 +12,15 @@ def FanoProfile(Evector,E0,Gamma,q):
     Evectornew=(Evector-E0)*2/Gamma
     return (np.square(Evectornew+q)/(1+np.square(Evectornew)))
 
+def FanoProfileNorm(Evector,E0,Gamma,q):
+    Evectornew=(Evector-E0)*2/Gamma
+    return (np.square(Evectornew+q)/(1+np.square(Evectornew)))*Gamma/2/(q*q-1)/np.pi
+
 def Lorentzian(Evector,E0,Gamma):
 	return Gamma/2/(np.square(Evector-E0)+np.square(Gamma/2))
 
+def LorentzianNorm(Evector,E0,Gamma):
+	return Gamma/2/(np.square(Evector-E0)+np.square(Gamma/2))/np.pi
 #Consult Ott et al. Science 340 p716 (2013)
 def FanoUnifiedPhase(Evector,E0,Gamma,phi):
 	phi=(phi + np.pi) % (2 * np.pi ) - np.pi
